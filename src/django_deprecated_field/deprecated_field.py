@@ -113,6 +113,7 @@ class DeprecatedField(models.Field):  # type: ignore
     def __init__(self, original_field: FieldType) -> None:
         super().__init__()
         self.original_field = original_field
+        self.serialize = False
 
     def contribute_to_class(
         self, cls: type[models.Model], name: str, private_only: bool = False
